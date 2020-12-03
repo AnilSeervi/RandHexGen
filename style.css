@@ -1,0 +1,60 @@
+:root {
+  --back-clr: #9b31e2;
+  --text-clr: #ffffff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: var(--back-clr);
+  text-align: center;
+  color: var(--text-clr);
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 0.3em;
+  text-shadow: 0.2rem 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
+button#change {
+  font-size: 20px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 180px;
+  height: 60px;
+  background-color: var(--text-clr);
+  color: var(--back-clr);
+  border: none;
+  transition: transform 50ms ease-in-out;
+}
+button#change::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  box-shadow: 0 0.5rem 1rem -0.25rem rgba(0, 0, 0, 0.3);
+  transition: opacity 200ms ease-out;
+}
+button#change:active {
+  transform: scale(0.9);
+}
+button#change:active::after {
+  opacity: 1;
+}
+body,
+button#change {
+  transition: all 350ms ease-in-out;
+}
